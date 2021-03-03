@@ -5,15 +5,11 @@ function setup() {
     canvas = createCanvas(350, 300)
     canvas.center()
     video = createCapture(VIDEO)
-    video.hide(350,300)
+    video.size(350, 300)
     video.hide()
 
     poseNet = ml5.poseNet(video, modelLoaded)
     poseNet.on("pose", gotPoses)
-}
-
-function draw() {
-    image(video, 0, 0, 350, 300)
 }
 
 function take_snapshot() {
@@ -40,7 +36,7 @@ function draw() {
     stroke(255, 0, 0);
     circle(nose_x, nose_y, 20);
  */
-    image(img, nose_x, nose_y, 75, 50);
+    image(img, nose_x -15, nose_y -15, 30, 30);
 }
 
 function preload() {
